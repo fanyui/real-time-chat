@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\EventName;
+use App\Events\EventTwo;
 use Illuminate\Http\Request;
 
 class ChatController extends Controller
@@ -18,6 +19,7 @@ class ChatController extends Controller
 	}
 	public function saveChat(Request $request){
 		//return "hello";
+				event(new EventTwo($request->message));
 		    	event(new EventName($request->message));
 		return response()->json(array("name" => "harisu", "message" => $request->message));
 	}

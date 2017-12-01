@@ -131,8 +131,9 @@
     <script src="{{ asset('js/socket.io.js') }}"></script>
     <script>
         var socket = io('http://127.0.0.1:3000');
+        // var socket = io(window.location.origin + ':3000');
         //var socket = io('http://192.168.10.10:3000');
-        socket.on("test-channel:App\\Events\\EventName", function(message){
+        socket.on("channel2", function(message){
 
         var receive = '<div class="row msg_container base_receive">'+
                         '<div class="col-md-2 col-xs-2 avatar">'+
